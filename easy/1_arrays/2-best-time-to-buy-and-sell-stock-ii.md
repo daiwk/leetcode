@@ -49,6 +49,14 @@ public:
 
 ### 解法2：
 
+例如，输入是[7, 1, 5, 3, 6, 4]，那么走势图如下，
+
+![](https://leetcode.com/media/original_images/122_maxprofit_1.PNG)
+
+在波谷买进，波峰卖出，这样收益最大，所以A+B是最大的。相比C而言，有A+B>=C
+
+所以，一个指针，先找到第一个波谷，买入，然后找到第一个波峰，卖出，这样这就是一次的利润了，然后继续，累加得到总利润。
+
 ```c++
 class Solution {
 public:
@@ -73,6 +81,10 @@ public:
 ```
 
 ### 解法3:
+
+例如，输入是[1, 7, 2, 3, 6, 7, 6, 7]，那么走势图如下 
+![](https://leetcode.com/media/original_images/122_maxprofit_2.PNG)
+思路与解法2类似，只是可以干掉那两个while循环，我们发现在上升的过程中，相邻两个时间的上升量累加起来，正好就是到达波峰时波峰和波谷的差值，即可以发现A+B+C=D
 
 ```c++
 class Solution {
